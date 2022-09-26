@@ -11,6 +11,9 @@
       href="https://scontent.fsgn5-3.fna.fbcdn.net/v/t39.30808-6/273219667_1326475564531019_8061114164776453345_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=NF-hS6sDyqAAX9UmYJC&tn=kk9-FwsvArc1O0eo&_nc_ht=scontent.fsgn5-3.fna&oh=00_AT8Bx86EWDOhTzLR2JdbSSG0P26hEn5Db8fY963x1QqkQQ&oe=6322472F"
     />
     <link rel="stylesheet" href="./assets/css/style.css" />
+    <!-- phải ghi dưới -->
+    <link rel="stylesheet" href="./assets/css/reponsive.css" />
+
     <link
       rel="stylesheet"
       href="./assets/fonts/themify-icons/themify-icons.css"
@@ -37,7 +40,9 @@
         <!-- end nav -->
 
         <!-- Begin: search btn-->
-
+        <div id="mobile-menu" class="mobile-menu-btn">
+          <i class="menu-icon ti-menu"> </i>
+        </div>
         <div class="search-btn">
           <i class="search-icon ti-search"></i>
         </div>
@@ -72,7 +77,7 @@
           </p>
 
           <div class="row members-list">
-            <div class="col col-third text-center">
+            <div class="col col-third s-col-full mt-32 text-center">
               <p class="member-name">Name</p>
               <img
                 src="./assets/img/Band/bandmember.jpg"
@@ -80,7 +85,7 @@
                 class="member-img"
               />
             </div>
-            <div class="col col-third text-center">
+            <div class="col col-third s-col-full mt-32 text-center">
               <p class="member-name">Name</p>
               <img
                 src="./assets/img/Band/bandmember.jpg"
@@ -88,7 +93,7 @@
                 class="member-img"
               />
             </div>
-            <div class="col col-third text-center">
+            <div class="col col-third s-col-full mt-32 text-center">
               <p class="member-name">Name</p>
               <img
                 src="./assets/img/Band/bandmember.jpg"
@@ -116,7 +121,7 @@
 
             <!-- phaces -->
             <div class="row places-list">
-              <div class="col col-third">
+              <div class="col col-third mt-16 s-col-full">
                 <img
                   src="./assets/img/phace/newyork.jpg"
                   alt="New York"
@@ -128,10 +133,12 @@
                   <p class="place-desc">
                     Praesent tincidunt sed tellus ut rutrum sed vitae justo.
                   </p>
-                  <button class="btn js-buy-ticket">Buy Tickets</button>
+                  <button class="btn js-buy-ticket s-full-width">
+                    Buy Tickets
+                  </button>
                 </div>
               </div>
-              <div class="col col-third">
+              <div class="col col-third mt-16 s-col-full">
                 <img
                   src="./assets/img/phace/paris.jpg"
                   alt="New York"
@@ -143,10 +150,12 @@
                   <p class="place-desc">
                     Praesent tincidunt sed tellus ut rutrum sed vitae justo.
                   </p>
-                  <button class="btn js-buy-ticket">Buy Tickets</button>
+                  <button class="btn js-buy-ticket s-full-width">
+                    Buy Tickets
+                  </button>
                 </div>
               </div>
-              <div class="col col-third">
+              <div class="col col-third mt-16 s-col-full">
                 <img
                   src="./assets/img/phace/sanfran.jpg"
                   alt="New York"
@@ -158,7 +167,9 @@
                   <p class="place-desc">
                     Praesent tincidunt sed tellus ut rutrum sed vitae justo.
                   </p>
-                  <button class="btn js-buy-ticket">Buy Tickets</button>
+                  <button class="btn js-buy-ticket s-full-width">
+                    Buy Tickets
+                  </button>
                 </div>
               </div>
             </div>
@@ -171,24 +182,24 @@
           <p class="section-sub-heading">Fan? Drop a note!</p>
 
           <div class="row contact-content">
-            <div class="col col-half contact-info">
+            <div class="col col-half s-col-full contact-info">
               <p>
                 <i class="ti-location-pin"></i>
                 Chicago, US
               </p>
               <p>
                 <i class="ti-mobile"></i>
-                Phone: +00 151515
+                Phone: <a href="tel:+00 151515">+00 151515</a>
               </p>
               <p>
                 <i class="ti-email"></i>
-                Email: mail@mail.com
+                Email: <a href="mailto:baobaokk321@gmail.com">mail@mail.com </a>
               </p>
             </div>
-            <div class="col col-half contact-form">
+            <div class="col col-half s-col-full contact-form">
               <form action="">
                 <div class="row">
-                  <div class="col col-half">
+                  <div class="col col-half s-col-full">
                     <input
                       type="text"
                       name=""
@@ -198,7 +209,7 @@
                       class="form-control"
                     />
                   </div>
-                  <div class="col col-half">
+                  <div class="col col-half s-col-full s-mt-8">
                     <input
                       type="email"
                       name=""
@@ -222,7 +233,7 @@
                   </div>
                 </div>
                 <input
-                  class="btn mt-16 pull-right"
+                  class="btn mt-16 pull-right s-full-width"
                   type="submit"
                   value="SEND"
                 />
@@ -288,6 +299,55 @@
         </footer>
       </div>
     </div>
+    <!-- btn menu -->
+    <script>
+      // lấy id
+      var header = document.getElementById("header");
+      // lấy menu id
+      var mobileMenu = document.getElementById("mobile-menu");
+      //lấy giá trị
+      var headerHeight = header.clientHeight;
+      // lắng nghe click đóng mở menu mobile
+      mobileMenu.onclick = function () {
+        // alert("Click me!");
+        // in bên tap console
+        // console.log(header.clientHeight);
+        // kiểm tra đang mở
+        var isClose = header.clientHeight === headerHeight;
+        // đang đóng
+        if (isClose) {
+          // sửa css
+          header.style.height = "auto";
+        } //đang mở
+        else {
+          // sửa css 46 là giá trị đang đóng
+          header.style.height = null;
+        }
+      };
+
+      // tự động đóng menu
+      //lấy ra tất cả có đấu #
+      var menuItems = document.querySelectorAll('#nav li a[href*="#"]');
+      for (var i = 0; i < menuItems.length; i++) {
+        var menuItem = menuItems[i];
+
+        //chọn menu
+        menuItem.onclick = function (event) {
+          //nếu có anh chị em liền kề và anh chị em đó có calss là sunbnav
+          var isParenMenu =
+            this.nextElementSibling &&
+            this.nextElementSibling.classList.contains("subnav");
+          // ẩn đi
+          if (!isParenMenu) {
+            header.style.height = null;
+          } else {
+            // bỏ qua
+            event.preventDefault();
+          }
+        };
+      }
+    </script>
+
     <!-- đóng mở menu -->
     <script>
       // document là trang web
